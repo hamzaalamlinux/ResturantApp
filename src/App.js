@@ -20,9 +20,9 @@ function App() {
       <AddFood/>
     </Route>
 
-    <Route path="*">
+    {/* <Route path="*">
      <ErrorPage />
-    </Route>
+    </Route> */}
     </div>
    </Switch>
    {/* <Footer /> */}
