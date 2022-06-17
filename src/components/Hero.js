@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Card, Input } from 'semantic-ui-react'
 // import { QrReader } from 'react-qr-reader'
-const url = 'https://temp-server.netlify.app/api/3-airtable'
+const url = 'http://127.0.0.1:8000/api/GetFoods'
 const Hero = () => {
  const [products, setProducts] = useState([])
  const { isModalOpen, closeModal } = useModalContext()
@@ -45,23 +45,23 @@ const Hero = () => {
     </div>
    </div>
    {products.map((product) => {
-    const { id, name, url, category, location } = product
+    const { id, food_name, file_path, food_category, location } = product
     return (
      <div className="container" key={id}>
       <div
        className="card"
        style={{
-        background: `url(${url}) no-repeat center center`,
+        background: `url(http://127.0.0.1:8000/${file_path}) no-repeat center center`,
         backgroundSize: `cover`,
        }}
       >
        <div className="contentBx" >
         <div className="content-title" style={{ padding: '0.25rem' }}>
-         <p>{name}</p>
+         <p>{food_name}</p>
         </div>
 
         <div className="color" >
-         <p>{category}</p>
+         <p>{food_category}</p>
          <p>{location}</p>
          <a href="/">View</a>
         </div>
